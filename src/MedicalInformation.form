@@ -58,37 +58,6 @@
               <text value="Have there been any changes in your general health in the last year?"/>
             </properties>
           </component>
-          <hspacer id="16c8c">
-            <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="88" height="11"/>
-              </grid>
-            </constraints>
-          </hspacer>
-          <component id="b6fb" class="javax.swing.JCheckBox" binding="yes2">
-            <constraints>
-              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Yes"/>
-            </properties>
-          </component>
-          <component id="5d468" class="javax.swing.JCheckBox" binding="no2">
-            <constraints>
-              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="No"/>
-            </properties>
-          </component>
-          <component id="ad850" class="javax.swing.JCheckBox" binding="maybe2">
-            <constraints>
-              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Maybe"/>
-            </properties>
-          </component>
           <component id="ffa64" class="javax.swing.JLabel" binding="Question3">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -305,7 +274,7 @@
           </component>
           <component id="44790" class="javax.swing.JTextArea" binding="TextBox2">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
@@ -353,7 +322,7 @@
           </component>
           <component id="24036" class="javax.swing.JLabel">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="If yes, please explain"/>
@@ -388,6 +357,37 @@
               <grid row="23" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
+          <hspacer id="a300">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="88" height="11"/>
+              </grid>
+            </constraints>
+          </hspacer>
+          <component id="c6aa2" class="javax.swing.JCheckBox" binding="yes2">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Yes"/>
+            </properties>
+          </component>
+          <component id="61b1" class="javax.swing.JCheckBox" binding="no2">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="No"/>
+            </properties>
+          </component>
+          <component id="c30cf" class="javax.swing.JCheckBox" binding="maybe2">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Maybe"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
@@ -402,6 +402,46 @@
       <member id="ce22a"/>
       <member id="ecf06"/>
       <member id="a35d9"/>
+    </group>
+    <group name="buttonGroup1">
+      <member id="ae6ad"/>
+      <member id="24c30"/>
+      <member id="f27e2"/>
+    </group>
+    <group name="buttonGroup2">
+      <member id="b6fb"/>
+      <member id="5d468"/>
+      <member id="ad850"/>
+    </group>
+    <group name="buttonGroup3">
+      <member id="cea0f"/>
+      <member id="af904"/>
+      <member id="f238c"/>
+    </group>
+    <group name="buttonGroup4">
+      <member id="c351e"/>
+      <member id="11b4a"/>
+      <member id="ee1db"/>
+    </group>
+    <group name="buttonGroup5">
+      <member id="7b404"/>
+      <member id="92a88"/>
+      <member id="a6781"/>
+    </group>
+    <group name="buttonGroup6">
+      <member id="73280"/>
+      <member id="aee71"/>
+      <member id="3072b"/>
+    </group>
+    <group name="buttonGroup7">
+      <member id="5cda5"/>
+      <member id="2196d"/>
+      <member id="b869c"/>
+    </group>
+    <group name="buttonGroup2">
+      <member id="c6aa2"/>
+      <member id="61b1"/>
+      <member id="c30cf"/>
     </group>
   </buttonGroups>
 </form>

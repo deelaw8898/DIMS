@@ -4,12 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-public class MedicalInformation  {
+public class MedicalInformation extends PatientInformation {
     private boolean flag;
 
     //--------------------------------------
@@ -66,7 +62,7 @@ public class MedicalInformation  {
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                saveMedInfoToFile();
+                saveMedInfo();
                 flag = next(jDialog);
                 jDialog.setVisible(false);
             }
@@ -75,14 +71,71 @@ public class MedicalInformation  {
         return flag;
     }
 
-    private void saveMedInfoToFile() {
-        try {
-            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("myfile.txt", true)));
-            out.println("the text");
-            out.close();
-        } catch (IOException e) {
-            //exception handling left as an exercise for the reader
-        }
+    private void saveMedInfo() {
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(Question1.getText()).append("\n >> ");
+        if(yes1.isSelected())
+            builder.append("Yes\n");
+        if(no1.isSelected())
+            builder.append("No\n");
+        if(maybe1.isSelected())
+            builder.append("Maybe\n");
+        builder.append(TextBox1.getText()).append('\n');
+
+        builder.append(Question2.getText()).append("\n >> ");
+        if(yes2.isSelected())
+            builder.append("Yes\n");
+        if(no2.isSelected())
+            builder.append("No\n");
+        if(maybe2.isSelected())
+            builder.append("Maybe\n");
+        builder.append(TextBox2.getText()).append('\n');
+
+        builder.append(Question3.getText()).append("\n >> ");
+        if(yes3.isSelected())
+            builder.append("Yes\n");
+        if(no3.isSelected())
+            builder.append("No\n");
+        if(maybe3.isSelected())
+            builder.append("Maybe\n");
+        builder.append(TextBox3.getText()).append('\n');
+
+        builder.append(Question4.getText()).append("\n >> ");
+        if(yes4.isSelected())
+            builder.append("Yes\n");
+        if(no4.isSelected())
+            builder.append("No\n");
+        if(maybe4.isSelected())
+            builder.append("Maybe\n");
+        builder.append(TextBox4.getText()).append('\n');
+
+        builder.append(Question5.getText()).append("\n >> ");
+        if(yes5.isSelected())
+            builder.append("Yes\n");
+        if(no5.isSelected())
+            builder.append("No\n");
+        if(maybe5.isSelected())
+            builder.append("Maybe\n");
+        builder.append(TextBox5.getText()).append('\n');
+
+        builder.append(Question6.getText()).append("\n >> ");
+        if(yes6.isSelected())
+            builder.append("Yes\n");
+        if(no6.isSelected())
+            builder.append("No\n");
+        if(maybe6.isSelected())
+            builder.append("Maybe\n");
+
+        builder.append(Question7.getText()).append("\n >> ");
+        if(yes7.isSelected())
+            builder.append("Yes\n");
+        if(no7.isSelected())
+            builder.append("No\n");
+        if(maybe7.isSelected())
+            builder.append("Maybe\n");
+
+        MedicalInfo = builder.toString();
     }
 
 

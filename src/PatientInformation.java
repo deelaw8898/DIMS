@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -27,6 +25,8 @@ public class PatientInformation extends FrontDesk {
     private JPanel registerPanel;
     private JButton nextButton;
     private JTextField ReferredByValue;
+
+    static String MedicalInfo;
 
 
     public PatientInformation() {
@@ -128,12 +128,14 @@ public class PatientInformation extends FrontDesk {
     }
 
     private void addPatientToFile(Patient newPatient) {
+        StringBuilder builder = new StringBuilder();
         String info = newPatient.toString();
+        builder.append(info).append("\n\n\n").append(MedicalInfo);
         String fileName = "PatientRecord\\" + newPatient.getHealthCardNumber() + ".txt";
         try
         {
             FileWriter myWriter = new FileWriter(fileName);
-            myWriter.write(info);
+            myWriter.write(builder.toString());
             myWriter.close();
         }
         catch (IOException e) {
