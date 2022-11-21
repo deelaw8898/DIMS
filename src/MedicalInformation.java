@@ -146,9 +146,5 @@ public class MedicalInformation extends PatientInformation {
         return true;
     }
 
-    private void createUIComponents() {
-
-    }
-
 
 }

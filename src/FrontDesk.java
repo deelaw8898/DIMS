@@ -1,17 +1,42 @@
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 import java.util.TreeMap;
 
-public class FrontDesk extends Employee {
+public class FrontDesk {
     private static final Schedule DocSchedule = new Schedule();
 
-    public TreeMap<String, Patient> PatientList;    //healthCardNum --> Patient
+    public static TreeMap<String, Patient> PatientList;    //healthCardNum --> Patient
 
     public FrontDesk() {
         PatientList = new TreeMap<>();
+        importPatients();
+    }
+
+    private void importPatients() {
+
+        BufferedReader read = null;
+        try {
+            read = new BufferedReader(new FileReader("PatientRecord.txt"));
+        } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Missing PatientRecord.txt file in program file",
+                    "PatientRecord File Not Found", JOptionPane.ERROR_MESSAGE);
+            ;
+        }
+        String line = "";
+
+        while (true) {
+            try {
+                if ((line = read.readLine()) == null) break;
+            } catch (IOException e) {
+                throw new RuntimeException("File not found");
+            }
+            if(line.equals(""))
+                break;
+            String[] info = line.split(",");
+            Patient newPatient = new Patient(info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10],info[11],info[12],info[13],info[14],info[15]);
+            addPatientToList(newPatient.getHealthCardNumber(), newPatient);
+        }
     }
 
     public void registerPatient() {
@@ -51,7 +76,9 @@ public class FrontDesk extends Employee {
             String HourValue = Objects.requireNonNull(hourDropDown.getSelectedItem()).toString();
             String MinValue = Objects.requireNonNull(minDropDown.getSelectedItem()).toString();
 
-            if (isPatient(healthCardNumValue)) {
+            boolean flag = isPatient(healthCardNumValue);
+
+            if (flag) {
                 DocSchedule.setAppointment(PatientList.get(healthCardNumValue), HourValue, MinValue);
             } else {
                 JOptionPane.showMessageDialog(null, "Patient is not registered",
@@ -179,20 +206,6 @@ public class FrontDesk extends Employee {
 
     public boolean isPatient(String healthCardNum) {
         return PatientList.containsKey(healthCardNum);
-    }
-
-    public void viewOptions() {
-        System.out.println("""
-                1) Register New Patient
-                2) Set Appointment
-                3) Delete Appointment
-                4) View Dentist's Schedule
-                5) Checkout
-                6) Fax Numbers List of Pharmacies
-                7) Add Hours
-                0) Quit Program""");
-        boolean flag = false;
-
     }
 
     public void addPatientToList(String HealthCardNumber, Patient patient) {

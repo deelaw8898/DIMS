@@ -71,8 +71,9 @@ public class FrontDeskOptions {
             public void actionPerformed(ActionEvent e)
             {
                 JPanel panel = new JPanel();
-                JTextField input = new JTextField();
-                panel.add(new JLabel("Enter Health Card Number"));
+                JTextField input = new JTextField(11);
+                JLabel label = new JLabel("Enter Health Card Number");
+                panel.add(label);
                 panel.add(input);
                 int result = JOptionPane.showConfirmDialog(null,panel,"Check Patient Registration Status", JOptionPane.OK_CANCEL_OPTION);
                 if(result == JOptionPane.OK_OPTION){
@@ -93,8 +94,9 @@ public class FrontDeskOptions {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JPanel panel = new JPanel();
-                JTextField input = new JTextField();
-                panel.add(new JLabel("Enter Health Card Number"));
+                JTextField input = new JTextField(11);
+                JLabel label = new JLabel("Enter Health Card Number");
+                panel.add(label);
                 panel.add(input);
                 int result = JOptionPane.showConfirmDialog(null,panel,"View Patient", JOptionPane.OK_CANCEL_OPTION);
                 if(result == JOptionPane.OK_OPTION){
@@ -102,7 +104,7 @@ public class FrontDeskOptions {
 
                     if(patient != null)
                     {
-                        JTextArea patientInfo = new JTextArea(patient.toString());
+                        JTextArea patientInfo = new JTextArea(patient.toString(),20,50);
                         patientInfo.setEditable(false);
                         JOptionPane.showMessageDialog(null, patientInfo);
                     }

@@ -1,4 +1,6 @@
-public class Patient extends Person {
+import java.io.Serializable;
+
+public class Patient extends Person implements Serializable {
     private String Occupation;
     private String Employer;
     private String ReferredBy;
@@ -14,9 +16,9 @@ public class Patient extends Person {
     @Override
     public String toString() {
         return super.toString() +
-                "\nOccupation=\t\t'" + Occupation + '\'' +
-                "\nEmployer=\t\t'" + Employer + '\'' +
-                "\nReferred By=\t\t'" + ReferredBy + '\'' +
+                "\nOccupation=\t\t" + Occupation +
+                "\nEmployer=\t\t" + Employer +
+                "\nReferred By=\t\t" + ReferredBy +
                 '}';
     }
 }

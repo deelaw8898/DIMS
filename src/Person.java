@@ -1,4 +1,6 @@
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     private String Title;
     private String FirstName;
     private String SurName;
@@ -34,19 +36,19 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Title='\t\t" + Title + '\'' +
-                ",\nFirstName='\t\t" + FirstName + '\'' +
-                ",\nSurName='\t\t" + SurName + '\'' +
-                ",\nHealthCardNumber='\t\t" + HealthCardNumber + '\'' +
-                ",\nEmail='\t\t" + Email + '\'' +
-                ",\nDateOfBirth='\t\t" + DateOfBirth + '\'' +
-                ",\nAddress='\t\t" + Address + '\'' +
-                ",\nPostalCode='\t\t" + PostalCode + '\'' +
-                ",\nContactHome='\t\t" + ContactHome + '\'' +
-                ",\nContactCell='\t\t" + ContactCell + '\'' +
-                ",\nContactWork='\t\t" + ContactWork + '\'' +
-                ",\nEmergencyContactName='\t\t" + EmergencyContactName + '\'' +
-                ",\nEmergencyContactNumber='\t\t" + EmergencyContactNumber + '\'';
+        return "Title=\t\t" + Title +
+                "\nFirstName=\t\t" + FirstName +
+                "\nSurName=\t\t" + SurName +
+                "\nHealthCardNumber=\t" + HealthCardNumber +
+                "\nEmail=\t\t" + Email + '\'' +
+                "\nDateOfBirth=\t\t" + DateOfBirth +
+                "\nAddress=\t\t" + Address + '\'' +
+                "\nPostalCode=\t\t" + PostalCode +
+                "\nContactHome=\t\t" + ContactHome +
+                "\nContactCell=\t\t" + ContactCell +
+                "\nContactWork=\t\t" + ContactWork +
+                "\nEmergencyContactName=\t" + EmergencyContactName +
+                "\nEmergencyContactNumber=\t" + EmergencyContactNumber;
     }
 
     public String getTitle() {

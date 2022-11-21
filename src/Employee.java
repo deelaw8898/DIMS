@@ -15,6 +15,30 @@ public class Employee extends Person{
 
     }
 
+    public void setBranchCode(String branchCode) {
+        BranchCode = branchCode;
+    }
+
+    public void setPay(String pay) {
+        Pay = pay;
+    }
+
+    public String getDepartment() {
+        return Department;
+    }
+
+    public String getBranchCode() {
+        return BranchCode;
+    }
+
+    public String getEmployeeId() {
+        return EmployeeId;
+    }
+
+    public String getPay() {
+        return Pay;
+    }
+
     @Override
     public String toString() {
         return super.toString() +

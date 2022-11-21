@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class EmployeeInfoForm extends HR {
     private JPanel registerPanel;
@@ -24,7 +28,12 @@ public class EmployeeInfoForm extends HR {
     private JTextField PayValue;
     private JTextField EmployeeIdValue;
 
-    public void EmployeeRegistrationForm(JFrame parent) {
+    public void EmployeeRegistrationForm()
+    {
+
+    }
+    public void registerEmployee() {
+        JFrame parent=null;
         JDialog jDialog = new JDialog(parent);
         jDialog.setTitle("Create a new employee");
         jDialog.setContentPane(registerPanel);
@@ -39,10 +48,10 @@ public class EmployeeInfoForm extends HR {
             }
         });
         jDialog.setVisible(true);
-        register(jDialog);
+        storeEmployeeObjectInParentClass(jDialog);
     }
 
-    private void register(JDialog jDialog) {
+    private void storeEmployeeObjectInParentClass(JDialog jDialog) {
         Employee employee = new Employee(TitleValue.getText(),
                 FirstNameValue.getText(),
                 SurnameValue.getText(),
@@ -63,7 +72,23 @@ public class EmployeeInfoForm extends HR {
 
 
         putEmployeeInList("123", employee);
+        putEmployeeInFile(employee, "EmployeeRecord.txt");
 
     }
+
+    private void putEmployeeInFile(Employee employee, String fileName) {
+        String info = getEmployeeInfo(employee);
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fileName, true)));
+            out.println(info);
+            out.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error While Writing The Employee File", "Task Failed", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+
+    }
+
+
 
 }
