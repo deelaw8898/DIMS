@@ -37,7 +37,7 @@ public class Payment {
             public void actionPerformed(ActionEvent e) {
 
                 jDialog.dispose();
-                System.out.println(totalCost);
+                JOptionPane.showMessageDialog(null,"Total bill:"+totalCost,"Total Bill", JOptionPane.PLAIN_MESSAGE);
             }
         });
         addAdditionalCharges();

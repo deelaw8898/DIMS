@@ -16,7 +16,8 @@ public class FrontDeskOptions {
     private JButton logOutButton;
     private JPanel frontDeskOptionsPanel;
 
-    public FrontDeskOptions(FrontDesk frontDesk) {
+    public FrontDeskOptions() {
+        FrontDesk frontDesk = new FrontDesk();
         JDialog jDialog = new JDialog();
         jDialog.setTitle("Front Desk Options");
         jDialog.setContentPane(frontDeskOptionsPanel);
@@ -126,9 +127,5 @@ public class FrontDeskOptions {
     }
 
 
-    public static void main(String[] args)
-    {
-        FrontDesk fd = new FrontDesk();
-        FrontDeskOptions fdo = new FrontDeskOptions(fd);
-    }
+
 }

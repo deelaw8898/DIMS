@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 public class EmployeeInfoForm extends HR {
     private JPanel registerPanel;
@@ -48,7 +49,56 @@ public class EmployeeInfoForm extends HR {
             }
         });
         jDialog.setVisible(true);
+        setUserNamePassword();
         storeEmployeeObjectInParentClass(jDialog);
+    }
+
+    private void setUserNamePassword() {
+        boolean flag = true;
+        while(flag)
+        {
+            JPanel panel = new JPanel();
+            JLabel userNameLabel = new JLabel("User Name");
+            String username = EmployeeIdValue.getText() + '@' + DepartmentValue.getText();
+            JTextField UserNametextField = new JTextField(username);
+
+            JLabel PasswordLabel = new JLabel("Enter Password");
+            JPasswordField passwordField = new JPasswordField(11);
+            JLabel ConfirmPasswordLabel = new JLabel("Confirm Password");
+            JPasswordField ConfirmPasswordField = new JPasswordField(11);
+
+            panel.add(userNameLabel);
+            panel.add(UserNametextField);
+            panel.add(PasswordLabel);
+            panel.add(passwordField);
+            panel.add(ConfirmPasswordLabel);
+            panel.add(ConfirmPasswordField);
+            int status = JOptionPane.showConfirmDialog(null, panel, "Set Password", JOptionPane.OK_CANCEL_OPTION);
+            if(status==JOptionPane.OK_OPTION)
+            {
+                if(Arrays.equals(passwordField.getPassword(), ConfirmPasswordField.getPassword()))
+                {
+                    flag = false;
+                    String entry = username + '|' + (Arrays.toString(passwordField.getPassword()));
+                    //write username and password to file
+                    try {
+                        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("usernames.txt", true)));
+                        out.println(entry);
+                        out.close();
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null, "Error While Writing The usernames.txt File", "Task Failed", JOptionPane.ERROR_MESSAGE);
+                        e.printStackTrace();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Password Did Not Match","Password Mismatch",JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+
+
+
+
     }
 
     private void storeEmployeeObjectInParentClass(JDialog jDialog) {
@@ -89,6 +139,10 @@ public class EmployeeInfoForm extends HR {
 
     }
 
-
+    public static void main(String[] args)
+    {
+        EmployeeInfoForm eif = new EmployeeInfoForm();
+        eif.setUserNamePassword();
+    }
 
 }
