@@ -3,6 +3,9 @@
 ## Overview
 DIMS is a Java-based management system designed to streamline administrative tasks in the dentistry industry. It provides features for different roles including front desk, dentists, and HR. Key functionalities include patient registration, appointment scheduling, and employee management.
 
+## Project Report
+For a detailed overview of the project, please refer to the [Project Report](https://github.com/deelaw8898/DIMS/blob/main/DIMS-Project%20Report.pdf).
+
 ## Installation
 To install DIMS, you have two options: using the pre-compiled JAR file or building from source. For a quick setup, download DIMS.jar from the repository and run it using Java (requires Java Runtime Environment). Alternatively, if you prefer to build from source, clone the repository to your local machine, navigate to the source code directory, and compile the Java files.
 
