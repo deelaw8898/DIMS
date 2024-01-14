@@ -78,9 +78,7 @@ Human Resources can manage employee data within the system.
 
 ## Troubleshooting
 
-If you encounter any issues while using DIMS, please refer to the troubleshooting guide in the documentation or contact support.
-
-For a complete list of features and detailed user instructions, please refer to the full user manual included in the system documentation.
+For a complete list of features and detailed user instructions, please refer to the detailed [Project Report](https://github.com/deelaw8898/DIMS/blob/main/DIMS-Project%20Report.pdf) included in the system documentation.
 
 ## Architecture
 The Dental Industry Management System (DIMS) is designed using object-oriented programming principles in Java, ensuring a modular, scalable, and maintainable codebase. The architecture is centered around robust class design and encapsulation of data and behavior, providing a clear separation of concerns and ease of use.
