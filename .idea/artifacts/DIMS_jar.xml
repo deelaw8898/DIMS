@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DIMS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DIMS_jar</output-path>
+    <root id="archive" name="DIMS.jar">
+      <element id="module-output" name="DIMS" />
+    </root>
+  </artifact>
+</component>

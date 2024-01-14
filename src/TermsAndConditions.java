@@ -1,23 +1,33 @@
-//TODO CANCEL BUTTON IS NOT CONFIGURED YET
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Shows a dialogue box of terms and conditions of the clinic
+ */
 public class TermsAndConditions {
+    /**
+     * Indicates whether the patient accepted the terms and conditions
+     */
     private boolean flag;
     private JTextArea TextArea;
     private JPanel panel1;
     private JButton iAgreeButton;
     private JButton cancelButton;
 
+    /**Empty constructor*/
     public TermsAndConditions() {
 
     }
 
+    /**
+     * Displays the terms and conditions form
+     * @return true if the process is a success, False otherwise
+     */
     public boolean TermsAndConditionsFrom(JFrame parent) {
         JDialog jDialog = new JDialog(parent);
-        jDialog.setTitle("Patient Medical Information");
+        jDialog.setTitle("Terms and Conditions");
         jDialog.setContentPane(panel1);
         jDialog.setMinimumSize(new Dimension(700, 700));
         jDialog.setModal(true);
@@ -64,7 +74,8 @@ public class TermsAndConditions {
         iAgreeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                register(jDialog);
+                flag = true;
+                jDialog.dispose();
             }
         });
         cancelButton.addActionListener(new ActionListener() {
@@ -75,14 +86,6 @@ public class TermsAndConditions {
         });
         jDialog.setVisible(true);
         return flag;
-    }
-
-
-    public void register(JDialog jDialog) {
-        flag = true;
-        jDialog.dispose();
-
-
     }
 
 

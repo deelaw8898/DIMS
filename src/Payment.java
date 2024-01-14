@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+/**
+ * Provides with a gui panel for checkout
+ */
+
 public class Payment {
     private JCheckBox scalingAndPolishingCheckBox;
     private JCheckBox dentalCheckUpByCheckBox;
@@ -21,6 +25,9 @@ public class Payment {
     private float totalCost = 0;
 
 
+    /**
+     * Views the panel
+     */
     public void getPaymentForm() {
         JFrame parent = null;
         JDialog jDialog = new JDialog(parent);
@@ -37,15 +44,17 @@ public class Payment {
             public void actionPerformed(ActionEvent e) {
 
                 jDialog.dispose();
-                JOptionPane.showMessageDialog(null,"Total bill:"+totalCost,"Total Bill", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Total bill:" + totalCost, "Total Bill", JOptionPane.PLAIN_MESSAGE);
             }
         });
-        addAdditionalCharges();
+        addAdditionalCharges(); //pops up anther panel to input any additional amount to be added to the total
 
         jDialog.setVisible(true);
     }
 
-
+    /**
+     * Updates the total on the panel if the checkbox is selected
+     */
     private void checkBoxActionListeners() {
         scalingAndPolishingCheckBox.addActionListener(new ActionListener() {
             @Override
@@ -54,6 +63,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         DentalFillingCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,6 +71,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         dentalCheckUpByCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,6 +79,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         XRayCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,6 +87,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         RemovalSimpleCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,6 +95,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         RemovalComplexCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -89,6 +103,7 @@ public class Payment {
                 Total.setText(String.format("%.2f", totalCost));
             }
         });
+        /*Updates the total on the panel if the checkbox is selected*/
         CrownCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -100,15 +115,19 @@ public class Payment {
     }
 
 
+    /**
+     * pops up anther panel to input any additional amount to be added to the total
+     */
     private void addAdditionalCharges() {
         addAdditionalChargesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //makes sure only float value is input in the text field
                 NumberFormat floatFormat = NumberFormat.getNumberInstance();
-
                 NumberFormatter numberFormatter = new NumberFormatter(floatFormat);
                 numberFormatter.setAllowsInvalid(false); //restricts the input to be a number
                 numberFormatter.setMinimum(0); //Sets Minimum Value
+                //------------------------------------------------------------------------
 
                 JFormattedTextField field = new JFormattedTextField(numberFormatter);
                 JLabel label = new JLabel("Additional Cost $");
