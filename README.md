@@ -1,7 +1,7 @@
 # Dental Industry Management System (DIMS)
 
 ## Overview
-DIMS is a Java-based management system designed to streamline administrative tasks in the dentistry industry. It provides features for different roles including front desk, dentists, and HR. Key functionalities include patient registration, appointment scheduling, and employee management.
+DIMS is a POC for Java-based management system designed to streamline administrative tasks in the dentistry industry. It provides features for different roles including front desk, dentists, and HR. Key functionalities include patient registration, appointment scheduling, and employee management.
 
 ## Project Report
 For a detailed overview of the project, please refer to the [Project Report](https://github.com/deelaw8898/DIMS/blob/main/DIMS-Project%20Report.pdf).
